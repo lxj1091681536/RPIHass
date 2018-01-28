@@ -1,32 +1,29 @@
 自动化智能家居系统-RPIHASS  
 Automated Home Automation System - RPIHASS
 
-摘要：随着现代科学与技术的高速发展，智能化的设备大量出现，智能化已经成为了越来越多人的追求和选择，但随着而来的是智能化设备的统一管理问题。针对市面上出现的智能化设备，我们小组设计制作了一个基于Python的智能设备终端控制系统。该系统在树莓派三代B+开发板上基于Linux的Raspberry系统运行，智能系统均统一采用Python语言和Ymal语法规则编写，智能系统兼容接入当前市面上基于WiFi和315/433MHz控制的智能设备。树莓派直接通过网线接入网络，智能硬件设备接入WiFi后，系统能够通过网关端口来逆向识别并控制设备，同时设备可以使用安卓手机构建实时监控网络，在系统中可实时查看监控，并做出动作识别摄像拍照功能，系统具有优秀的人机交互界面，具备天气预报微信功能、闹钟、生活建议，方便了使用者的日常生活。该系统构建成本低，适用范围十分广泛，同时具备远程控制功能，可行性强，为当前智能设备发展提供巨大支持。
-关键词： 智能设备  Python  远程控制  设备统一管理
-
 Abstract: With the rapid development of modern science and technology and the emergence of a large number of intelligent devices, intelligence has become the pursuit and choice of more and more people. But with the coming of the unified management of intelligent devices. In response to the emergence of intelligent devices on the market, our team designed a Python-based intelligent device terminal control system. This system runs Raspberry system based on Linux on three generations of B + development board of Raspberry Pi. The intelligent systems are all unified and written in Python language and Ymal grammar rules. The intelligent system is compatible with the currently available smart devices based on WiFi and 315 / 433MHz control in the market. The raspberry pie directly accesses the network through a network cable. After the smart hardware device is connected to the WiFi, the system can reversely identify and control the device through the gateway port. At the same time, the device can use the Android mobile phone to construct a real-time monitoring network and monitor and control in real time in the system Make motion recognition camera camera function, the system has excellent human-computer interface, with weather forecast micro-channel function, alarm clock, life advice, convenient for the user's daily life. The system has the advantages of low cost, wide scope of application, remote control function and feasibility, and provides great support for the current development of smart devices.
-Keywords：Intelligent devices   Python   remote control   Unified Device Management
+Keywords：Intelligent  devices    Python    remote control    Unified Device Management
 
 目录
 1. 研究意义及目的  
 2. 当前智能硬件终端概述  
 3. 系统总体结构  
->3.1	树莓派系统板
->3.2 传感器模块
->3.3 显示屏模块
->3.4 系统整体结构
->3.5系统程序结构
->3.6 子模块的调用
-4. 子系统模块介绍
-5. Python程序功能
-6. 作品设计优势
->6.1 兼容多数智能硬件，适用范围广
->6.2 集中管理，远程操作
->6.3 界面美观，优化体验
->6.4 系统刷新周期短，响应快
->6.5 系统休眠功能，低功耗
-7. 结束语
-8. 参考文献
+>3.1	树莓派系统板  
+>3.2 传感器模块  
+>3.3 显示屏模块  
+>3.4 系统整体结构  
+>3.5系统程序结构  
+>3.6 子模块的调用  
+4. 子系统模块介绍  
+5. Python程序功能  
+6. 作品设计优势  
+>6.1 兼容多数智能硬件，适用范围广  
+>6.2 集中管理，远程操作  
+>6.3 界面美观，优化体验  
+>6.4 系统刷新周期短，响应快  
+>6.5 系统休眠功能，低功耗  
+7. 结束语  
+8. 参考文献  
 
 1. 研究意义及目的
 随着现代科学与技术的高速发展，智能化的设备大量出现，智能化已经成为了越来越多人的追求和选择，但随着而来的是智能化设备的统一管理问题。当前市场中出现的智能化设备大多基于无线控制，家庭中使用一个路由器来作为网络终端即可使用手机或者其他设备远程控制智能设备，不同智能设备公司提供的远程控制终端控制规则往往存在着较大的区别，因此使用者在使用多家公司生产的设备时，需要安装多个控制软件来操控，在一定程度上复杂化了家庭智能设备控制流畅度，不便于消费者操作，因此我们想要开发一套基于Python的智能家居系统来兼容所有智能设备操控程序方案，方便使用者对设备的集中管理。
