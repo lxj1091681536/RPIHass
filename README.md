@@ -18,7 +18,7 @@ Keywords：Intelligent  devices    Python    remote control    Unified Device Ma
 >4. 子系统模块介绍  
 >5. Python程序功能  
 >6. 作品设计优势  
->>6.1 兼容多数智能硬件
+>>6.1 兼容多数智能硬件  
 >>6.2 集中管理，远程操作  
 >>6.3 界面美观，优化体验  
 >>6.4 系统刷新周期短，响应快  
