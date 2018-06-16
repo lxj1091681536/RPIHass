@@ -1,0 +1,60 @@
+#首先我们增加script按钮，被别控制温度加和温度减
+#我的空调温度是一个滑杆控制的。将以下input_slider.bedroom_air_conditioner_temp换成你的滑杆ID。
+#如果你是用其他方式控制空调温度的，可以自己写这两个按钮。总之实现，点一下温度就加一度/减一度。
+script:
+  fp_air_h_up:
+    sequence:
+      - service: input_slider.select_value
+        data_template:
+          entity_id: input_slider.bedroom_air_conditioner_temp  #空调设定温度的滑竿
+          value: '{{states.input_slider.bedroom_air_conditioner_temp.state| int +1 }}'
+  fp_air_h_down:
+    sequence:
+      - service: input_slider.select_value
+        data_template:
+          entity_id: input_slider.bedroom_air_conditioner_temp  #空调设定温度的滑竿
+          value: '{{states.input_slider.bedroom_air_conditioner_temp.state| int -1 }}'
+#我们增加一些ID，用于控制UI上面的状态切换。          
+sensor: 
+#我是的制冷和加热模式是通过一个input_boolean开关切换的，打开为制冷，关闭为加热！
+#如果你的也是，那么把以下的input_boolean.bedroom_air_conditioner_temp_cool切换成你的ID。
+#如果你是用其他方式控制加热、制冷模式的，你就按照你的ID增加这4个sensor就行了，四个都一样，输出结果为制冷或者加热。
+#我们增加4个模式状态的sensor。分别控制UI上面的四个对象的状态反馈。
+  - platform: template
+    sensors:                #第一个制冷加热模式的显示。 用于图标显示的切换
+      air_moshi_icon:
+        value_template: '{% if is_state("input_boolean.bedroom_air_conditioner_temp_cool", "on") %}制冷{% else %}加热{% endif %}'
+  - platform: template
+    sensors:                #第二个制冷加热模式的显示。 用于温度环颜色切换
+      air_moshi_color:
+        value_template: '{% if is_state("input_boolean.bedroom_air_conditioner_temp_cool", "on") %}制冷{% else %}加热{% endif %}'
+  - platform: template
+    sensors:                #第三个制冷加热模式的显示。 用于按钮的切换
+      air_moshi_1:
+        value_template: '{% if is_state("input_boolean.bedroom_air_conditioner_temp_cool", "on") %}制冷{% else %}加热{% endif %}'
+  - platform: template
+    sensors:                #第四个制冷加热模式的显示。 用于按钮的切换
+      air_moshi_2:
+        value_template: '{% if is_state("input_boolean.bedroom_air_conditioner_temp_cool", "on") %}制冷{% else %}加热{% endif %}'
+#  - platform: template
+#    sensors:                #这个暂时未使用
+#      air_temp_ring:
+#        value_template: '{{states.input_slider.bedroom_air_conditioner_temp.state| int }}'
+  - platform: template
+    sensors:                #增加一个开关状态的显示，用于输出空调是打开了还是关闭的。
+      ktzhuangtai:
+        value_template: '{{states.switch.blwskt.state }}'
+##以上都是增加的额外ID，为什么要额外增加？因为ui上面需要显示的对象不止一个，当然你如果不需要这么效果的切换也可以不增加。
+
+###1.添加一个实体id用于显示floorplan。  在对应位置添加
+binary_sensor:
+    - platform: mqtt      
+      state_topic: dummy/floorplan/sensor   
+      name: air    ##名字可以自定义，如果要添加多个，名字不同就行了
+  
+###2.给这个ID写上customize属性
+homeassistant:
+  customize:      
+    binary_sensor.air:          ##这就是上面那个ID
+      custom_ui_state_card: floorplan    ##这个不能动
+      config: !include air.yaml    ##这个ID的配置文件

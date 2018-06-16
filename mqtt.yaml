@@ -1,0 +1,7 @@
+broker: 192.168.0.100
+port: 1883
+client_id: home-assistant-1
+keepalive: 60
+username: pi
+password: raspberry
+discovery: true

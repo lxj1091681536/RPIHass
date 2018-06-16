@@ -1,0 +1,317 @@
+zone.home:               #上图设备ID
+  friendly_name: 寝室状态          #显示的汉化名称
+sensor.aqi:               #上图设备ID
+  friendly_name: 空气质量指数          #显示的汉化名称
+  homebridge_hidden: true          #是否在homebridge中隐藏
+sensor.aqi_co:    #上图设备ID
+  friendly_name: 一氧化碳            #显示的汉化名称
+  homebridge_hidden: true          #是否在homebridge中隐藏
+sensor.aqi_no2:              #上图设备ID
+  friendly_name: 二氧化氮           #显示的汉化名称
+  homebridge_hidden: true          #是否在homebridge中隐藏
+sensor.aqi_o3:               #上图设备ID
+  friendly_name: 臭氧            #显示的汉化名称
+  homebridge_hidden: true          #是否在homebridge中隐藏
+sensor.aqi_pm10:               #上图设备ID
+  friendly_name: PM10           #显示的汉化名称
+  homebridge_hidden: true          #是否在homebridge中隐藏
+sensor.aqi_pm25:               #上图设备ID
+  friendly_name: PM2.5           #显示的汉化名称
+  homebridge_hidden: true          #是否在homebridge中隐藏
+sensor.aqi_qlty:               #上图设备ID
+  friendly_name: 空气质量           #显示的汉化名称
+  homebridge_hidden: true          #是否在homebridge中隐藏
+sensor.aqi_so2:               #上图设备ID
+  friendly_name: 二氧化硫            #显示的汉化名称
+  homebridge_hidden: true          #是否在homebridge中隐藏
+sensor.date:               #上图设备ID
+  friendly_name: 日期           #显示的汉化名称
+  homebridge_hidden: true          #是否在homebridge中隐藏
+sensor.time:               #上图设备ID
+  friendly_name: 时间           #显示的汉化名称
+  homebridge_hidden: true          #是否在homebridge中隐藏
+sensor.today_deg:               #上图设备ID
+  friendly_name: 风向（360度）          #显示的汉化名称
+  homebridge_hidden: true          #是否在homebridge中隐藏
+sensor.today_dir:               #上图设备ID
+  friendly_name: 风向           #显示的汉化名称
+  homebridge_hidden: true          #是否在homebridge中隐藏
+sensor.today_hum:               #上图设备ID
+  friendly_name: 相对湿度            #显示的汉化名称
+  homebridge_hidden: true          #是否在homebridge中隐藏
+sensor.today_maxtmp:               #上图设备ID
+  friendly_name: 最高温度            #显示的汉化名称
+  homebridge_hidden: true          #是否在homebridge中隐藏
+sensor.today_mintmp:               #上图设备ID
+  friendly_name: 最低温度            #显示的汉化名称
+  homebridge_hidden: true          #是否在homebridge中隐藏
+sensor.today_mr:               #上图设备ID
+  friendly_name: 月落时间           #显示的汉化名称
+  homebridge_hidden: true          #是否在homebridge中隐藏
+sensor.trav_suggestion_brf:               #上图设备ID
+  friendly_name: 旅游指数           #显示的汉化名称
+  homebridge_hidden: true          #是否在homebridge中隐藏
+sensor.uv_suggestion_brf:               #上图设备ID
+  friendly_name: 紫外线指数           #显示的汉化名称
+  homebridge_hidden: true          #是否在homebridge中隐藏
+sensor.now_weather:               #上图设备ID
+  friendly_name: 天气状况           #显示的汉化名称
+  homebridge_hidden: true          #是否在homebridge中隐藏
+sensor.now_tmp:               #上图设备ID
+  friendly_name: 温度           #显示的汉化名称
+  homebridge_hidden: true          #是否在homebridge中隐藏
+sensor.now_vis:               #上图设备ID
+  friendly_name: 能见度           #显示的汉化名称
+  homebridge_hidden: true          #是否在homebridge中隐藏
+sensor.now_spd:               #上图设备ID
+  friendly_name: 风速           #显示的汉化名称
+  homebridge_hidden: true          #是否在homebridge中隐藏
+sensor.now_sc:               #上图设备ID
+  friendly_name: 风力等级           #显示的汉化名称
+  homebridge_hidden: true          #是否在homebridge中隐藏
+sensor.now_pres:               #上图设备ID
+  friendly_name: 气压          #显示的汉化名称
+  homebridge_hidden: true          #是否在homebridge中隐藏
+sensor.now_pcpn:               #上图设备ID
+  friendly_name: 降水量           #显示的汉化名称
+  homebridge_hidden: true          #是否在homebridge中隐藏
+sensor.now_hum:               #上图设备ID
+  friendly_name: 相对湿度          #显示的汉化名称
+  homebridge_hidden: true          #是否在homebridge中隐藏
+sensor.now_fl:               #上图设备ID
+  friendly_name: 体感温度           #显示的汉化名称
+  homebridge_hidden: true          #是否在homebridge中隐藏
+sensor.now_dir:               #上图设备ID
+  friendly_name: 风向           #显示的汉化名称
+  homebridge_hidden: true          #是否在homebridge中隐藏
+sensor.now_deg:               #上图设备ID
+  friendly_name: 风向（360度）           #显示的汉化名称
+  homebridge_hidden: true          #是否在homebridge中隐藏
+sensor.today_weather_day:               #上图设备ID
+  friendly_name: 白天天气           #显示的汉化名称
+  homebridge_hidden: true          #是否在homebridge中隐藏
+sensor.today_weather_night:               #上图设备ID
+  friendly_name: 晚上天气           #显示的汉化名称
+  homebridge_hidden: true          #是否在homebridge中隐藏
+sensor.today_sr:               #上图设备ID
+  friendly_name: 日出时间          #显示的汉化名称
+  homebridge_hidden: true          #是否在homebridge中隐藏
+sensor.today_ss:               #上图设备ID
+  friendly_name: 日落时间           #显示的汉化名称
+  homebridge_hidden: true          #是否在homebridge中隐藏
+sensor.today_ms:               #上图设备ID
+  friendly_name: 月升时间           #显示的汉化名称
+  homebridge_hidden: true          #是否在homebridge中隐藏
+sensor.today_pop:               #上图设备ID
+  friendly_name: 降水概率           #显示的汉化名称
+  homebridge_hidden: true          #是否在homebridge中隐藏
+sensor.today_pres:               #上图设备ID
+  friendly_name: 气压           #显示的汉化名称
+  homebridge_hidden: true          #是否在homebridge中隐藏
+sensor.today_sc:               #上图设备ID
+  friendly_name: 风力等级           #显示的汉化名称
+  homebridge_hidden: true          #是否在homebridge中隐藏
+sensor.today_spd:               #上图设备ID
+  friendly_name: 风速           #显示的汉化名称
+  homebridge_hidden: true          #是否在homebridge中隐藏
+sensor.today_uv:               #上图设备ID
+  friendly_name: 紫外线指数           #显示的汉化名称
+  homebridge_hidden: true          #是否在homebridge中隐藏
+sensor.today_vis:               #上图设备ID
+  friendly_name: 能见度           #显示的汉化名称
+  homebridge_hidden: true          #是否在homebridge中隐藏
+sensor.air_suggestion_brf:               #上图设备ID
+  friendly_name: 空气指数           #显示的汉化名称
+  homebridge_hidden: true          #是否在homebridge中隐藏
+sensor.comf_suggestion_brf:               #上图设备ID
+  friendly_name: 舒适度指数           #显示的汉化名称
+  homebridge_hidden: true          #是否在homebridge中隐藏
+sensor.cw_suggestion_brf:               #上图设备ID
+  friendly_name: 洗车指数           #显示的汉化名称
+  homebridge_hidden: true          #是否在homebridge中隐藏
+sensor.drsg_suggestion_brf:               #上图设备ID
+  friendly_name: 穿衣指数           #显示的汉化名称
+  homebridge_hidden: true          #是否在homebridge中隐藏
+sensor.flu_suggestion_brf:               #上图设备ID
+  friendly_name: 感冒指数           #显示的汉化名称
+  homebridge_hidden: true          #是否在homebridge中隐藏
+sensor.sport_suggestion_brf:               #上图设备ID
+  friendly_name: 运动指数           #显示的汉化名称
+  homebridge_hidden: true          #是否在homebridge中隐藏
+sensor.air_suggestion_txt:               #上图设备ID
+  friendly_name: 空气指数           #显示的汉化名称
+  homebridge_hidden: true          #是否在homebridge中隐藏
+sensor.comf_suggestion_txt:               #上图设备ID
+  friendly_name: 舒适度指数           #显示的汉化名称
+  homebridge_hidden: true          #是否在homebridge中隐藏
+sensor.cw_suggestion_txt:               #上图设备ID
+  friendly_name: 洗车指数           #显示的汉化名称
+  homebridge_hidden: true          #是否在homebridge中隐藏
+sensor.drsg_suggestion_txt:               #上图设备ID
+  friendly_name: 穿衣指数           #显示的汉化名称
+  homebridge_hidden: true          #是否在homebridge中隐藏
+sensor.flu_suggestion_txt:               #上图设备ID
+  friendly_name: 感冒指数           #显示的汉化名称
+  homebridge_hidden: true          #是否在homebridge中隐藏
+sensor.sport_suggestion_txt:               #上图设备ID
+  friendly_name: 运动指数           #显示的汉化名称
+  homebridge_hidden: true          #是否在homebridge中隐藏
+sensor.uv_suggestion_txt:               #上图设备ID
+  friendly_name: 紫外线指数           #显示的汉化名称
+  homebridge_hidden: true          #是否在homebridge中隐藏
+sensor.trav_suggestion_txt:               #上图设备ID
+  friendly_name: 旅游指数           #显示的汉化名称
+  homebridge_hidden: true          #是否在homebridge中隐藏
+sensor.speedtest_ping:               #上图设备ID
+  friendly_name: 网络响应时间           #显示的汉化名称
+  homebridge_hidden: true          #是否在homebridge中隐藏
+sensor.speedtest_upload:               #上图设备ID
+  friendly_name: 网络上传速度           #显示的汉化名称
+  homebridge_hidden: true          #是否在homebridge中隐藏
+sensor.speedtest_download:               #上图设备ID
+  friendly_name: 网络下载速度           #显示的汉化名称
+  homebridge_hidden: true          #是否在homebridge中隐藏
+sensor.cpu_temperature:
+ friendly_name: 系统温度
+ homebridge_hidden: true
+ icon: mdi:temperature-celsius
+sensor.disk_use_:
+ friendly_name: 已使用
+ homebridge_hidden: true
+sensor.disk_free_:
+ friendly_name: 磁盘剩余
+ homebridge_hidden: true
+sensor.sent_wlan0:
+ friendly_name: 发送字节
+ homebridge_hidden: true
+sensor.received_wlan0:
+ friendly_name: 接收字节
+ homebridge_hidden: true
+sensor.ipv4_address_wlan0:
+ friendly_name: 系统IP地址
+ homebridge_hidden: true
+sensor.last_boot:
+ friendly_name: 上次重启时间
+ homebridge_hidden: true
+sensor.since_last_boot_templated:
+ friendly_name: 已启动时间
+ homebridge_hidden: true
+sensor.ram_use:
+ friendly_name: RAM使用率
+script.reboot_pi:
+ friendly_name: 重启树莓派
+ icon: mdi:raspberrypi
+script.reboot_ha:
+ friendly_name: 重启HomeAssistant
+ icon: mdi:home-assistant
+script.turnon_auto:
+ friendly_name: 激活全部自动化
+ icon: mdi:flash-auto
+script.reload_themes:
+ friendly_name: 载入主题
+ icon: mdi:upload
+script.themes_select:
+ friendly_name: 确定主题
+ icon: mdi:format-paint
+script.message_board:
+ friendly_name: 激活留言
+ icon: mdi:forum
+script.stop_mediaplayer:
+ friendly_name: 音箱复位
+ icon: mdi:stop
+script.play_163music:
+ friendly_name: 播放点歌
+ icon: mdi:music
+input_text.text1:
+ friendly_name: 输入文本
+sensor.ip_webcam_audio_connections:     #上图设备ID
+  friendly_name: 音频连接           #显示的汉化名称
+  homebridge_hidden: true          #是否在homebridge中隐藏
+sensor.ip_webcam_battery_level:        #上图设备ID
+  friendly_name: 电池电量           #显示的汉化名称
+  homebridge_hidden: true          #是否在homebridge中隐藏
+sensor.ip_webcam_battery_temperature:    #上图设备ID
+  friendly_name: 电池温度           #显示的汉化名称
+  homebridge_hidden: true          #是否在homebridge中隐藏
+sensor.ip_webcam_battery_voltage:    #上图设备ID
+  friendly_name: 电池电压           #显示的汉化名称
+  homebridge_hidden: true          #是否在homebridge中隐藏
+sensor.ip_webcam_light_level:    #上图设备ID
+  friendly_name: 实景亮度           #显示的汉化名称
+  homebridge_hidden: true          #是否在homebridge中隐藏
+sensor.ip_webcam_motion:    #上图设备ID
+  friendly_name: 运动情况           #显示的汉化名称
+  homebridge_hidden: true          #是否在homebridge中隐藏
+switch.ip_webcam_exposure_lock:    #上图设备ID
+  friendly_name: 曝光锁定           #显示的汉化名称
+  homebridge_hidden: true          #是否在homebridge中隐藏
+switch.ip_webcam_focus:    #上图设备ID
+  friendly_name: 相机对焦          #显示的汉化名称
+  homebridge_hidden: true          #是否在homebridge中隐藏
+switch.ip_webcam_frontfacing_camera:    #上图设备ID
+  friendly_name: 反转摄像头           #显示的汉化名称
+  homebridge_hidden: true          #是否在homebridge中隐藏
+switch.ip_webcam_gps_active:    #上图设备ID
+  friendly_name: GPS定位           #显示的汉化名称
+  homebridge_hidden: true          #是否在homebridge中隐藏
+switch.ip_webcam_night_vision:    #上图设备ID
+  friendly_name: HDR模式           #显示的汉化名称
+  homebridge_hidden: true          #是否在homebridge中隐藏
+switch.ip_webcam_overlay:    #上图设备ID
+  friendly_name: 镜头覆盖           #显示的汉化名称
+  homebridge_hidden: true          #是否在homebridge中隐藏
+switch.ip_webcam_torch:    #上图设备ID
+  friendly_name: 闪光灯           #显示的汉化名称
+  homebridge_hidden: true          #是否在homebridge中隐藏
+switch.ip_webcam_video_recording:    #上图设备ID
+  friendly_name: 摄像模式           #显示的汉化名称
+  homebridge_hidden: true          #是否在homebridge中隐藏
+switch.ip_webcam_white_balance_lock:    #上图设备ID
+  friendly_name: 白平衡锁定        #显示的汉化名称
+  homebridge_hidden: true          #是否在homebridge中隐藏
+sensor.tomorrowday_weather_day:    #上图设备ID
+  friendly_name: 白天天气           #显示的汉化名称
+  homebridge_hidden: true          #是否在homebridge中隐藏
+sensor.tomorrowday_weather_night:    #上图设备ID
+  friendly_name: 晚上天气           #显示的汉化名称
+  homebridge_hidden: true          #是否在homebridge中隐藏
+automation.daily_weather_report:    #上图设备ID
+  friendly_name: 自动化天气推送      #显示的汉化名称        
+switch.wake_on_lan:    #上图设备ID
+  friendly_name: 远程电脑关机      #显示的汉化名称 
+sensor.lxj_iphone_battery_level:   #上图设备ID
+  friendly_name: 电池电量           #显示的汉化名称
+  homebridge_hidden: true          #是否在homebridge中隐藏
+sensor.lxj_iphone_battery_state:               #上图设备ID
+  friendly_name: 电池状态           #显示的汉化名称
+  homebridge_hidden: true          #是否在homebridge中隐藏
+# binary_sensor.menci:               #上图设备ID
+#   friendly_name: 寝室门状态           #显示的汉化名称
+#   homebridge_hidden: false          #是否在homebridge中隐藏
+switch.t1:               #上图设备ID
+  friendly_name: 开关1           #显示的汉化名称
+  homebridge_hidden: false 
+switch.t2:               #上图设备ID
+  friendly_name: 开关2           #显示的汉化名称
+  homebridge_hidden: false 
+switch.t3:               #上图设备ID
+  friendly_name: 开关3          #显示的汉化名称
+  homebridge_hidden: false 
+switch.t4:               #上图设备ID
+  friendly_name: 开关4          #显示的汉化名称
+  homebridge_hidden: false 
+switch.t5:               #上图设备ID
+  friendly_name: 开关5           #显示的汉化名称
+  homebridge_hidden: false 
+switch.t6:               #上图设备ID
+  friendly_name: 开关6           #显示的汉化名称
+  homebridge_hidden: false
+switch.t7:               #上图设备ID
+  friendly_name: 开关7           #显示的汉化名称
+  homebridge_hidden: false  
+sensor.qinshi_hum:               #上图设备ID
+  friendly_name: 寝室湿度           #显示的汉化名称
+  homebridge_hidden: true  
+sensor.qinshi_temp:               #上图设备ID
+  friendly_name: 寝室温度           #显示的汉化名称
+  homebridge_hidden: true  

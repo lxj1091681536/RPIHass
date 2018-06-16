@@ -1,0 +1,137 @@
+name: Air    ###名字
+image: /local/custom_ui/floorplan/air.svg      ##svg图像的位置！
+stylesheet: /local/custom_ui/floorplan/air.css    ##css主题属性文件位置！
+#pan_zoom:
+hide_app_toolbar:
+date_format: MMM-DD-YYYY
+
+groups:
+  - name: switch
+    entities:
+      - switch.blwskt             ##空调开关按钮的ID。实现按一下开，在按一下关的效果。如果你没有这个单独的开关，可以通过template-switch写一个。
+    action:
+      service: toggle            #点击按钮时候HA的动作：切换开和关
+    states:
+      - state: 'off'
+        class: 'switch-off'      #对应的主题效果。
+      - state: 'on'
+        class: 'switch-on'
+
+  - name: script
+    entities:
+      - script.fp_air_h_up             ##温度+按钮
+      - script.fp_air_h_down             ##温度-按钮
+#这两个就是我们增加的温度加减的ID#      
+    action:
+      domain: script
+      service: turn_on              #点击按钮时候HA的动作-切换开和关
+    states:
+      - state: 'off'
+        class: 'script-off'         #对应的效果
+      - state: 'on'
+        class: 'script-on'
+
+  - name: name  #显示空调名称
+    entities:
+      - binary_sensor.floorplan_air
+    text_template: 'Bedroom Air conditioning'   ##最上面的名称显示，可以直接改内容
+
+  - name: moshi
+    entities:
+       - input_boolean.bedroom_air_conditioner_temp_cool   ##这个是模式切换的ID，点一下加热，再点一下制冷。如果你没有这个单独的开关，可以通过template-switch写一个。
+    action:
+      domain: input_boolean
+      service: toggle
+    states:
+      - state: 'off'
+        class: 'moshi-off'
+      - state: 'on'
+        class: 'moshi-on'
+
+  - name: switch_zhuangtai
+    entities:
+      - sensor.ktzhuangtai         ##这个是我们增加的空调开关的状态sensor的ID
+    states:
+      - state: 'off'
+        class: 'switch_zhuangtai-off'
+      - state: 'on'
+        class: 'switch_zhuangtai-on'
+#这个控制开关按钮的颜色变化，打开的时候为红色，关闭为灰色#
+#下面4个是我们增加的模式状态的sensor。下面的id名称不建议更改。        
+  - name: air_moshi_1     
+    entities:
+      - sensor.air_moshi_1   #控制按钮的左右移动
+    states:
+      - state: '制冷'
+        class: 'moshi1-off'
+      - state: '加热'
+        class: 'moshi1-on'
+  - name: air_moshi_2       #控制按钮的左右移动
+    entities:
+      - sensor.air_moshi_2
+    states:
+      - state: '制冷'
+        class: 'moshi2-off'
+      - state: '加热'
+        class: 'moshi2-on'
+
+  - name: moshitubiao       #控制上面雪花和太阳的图标切换
+    entities:
+      - sensor.air_moshi_icon
+    states:
+      - state: '制冷'
+        class: 'moshi-zhileng'
+      - state: '加热'
+        class: 'moshi-jiare'
+
+  - name: moshiyanse
+    entities:
+      - sensor.air_moshi_color    #控制中间环形的颜色切换
+    states:
+      - state: '制冷'
+        class: 'moshi_color-zhileng'
+      - state: '加热'
+        class: 'moshi_color-jiare'
+
+  - name: kontiao_temperature  #显示空调温度的值
+    entities:
+      - input_slider.bedroom_air_conditioner_temp     ###这个是我的空调温度控制滑杆，直接取值。
+#你可以改为你的显示空调温度的ID。   
+    text_template: '${entity.state ? Math.ceil(entity.state) + "°C" : "undefined"}'
+
+    
+#以下未使用
+  - name: wenduhuanxin
+    entities:
+      - sensor.air_temp_ring
+    states:
+      - state: '16'
+        class: 'temp16'
+      - state: '17'
+        class: 'temp17'
+      - state: '18'
+        class: 'temp18'
+      - state: '19'
+        class: 'temp19'
+      - state: '20'
+        class: 'temp20'
+      - state: '21'
+        class: 'temp21'
+      - state: '22'
+        class: 'temp22'
+      - state: '23'
+        class: 'temp23'
+      - state: '24'
+        class: 'temp24'
+      - state: '25'
+        class: 'temp25'
+      - state: '26'
+        class: 'temp26'
+      - state: '27'
+        class: 'temp27'
+      - state: '28'
+        class: 'temp28'
+      - state: '29'
+        class: 'temp29'
+      - state: '30'
+        class: 'temp30'

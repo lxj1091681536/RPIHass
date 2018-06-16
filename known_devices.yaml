@@ -1,0 +1,9 @@
+
+lxjiphone:
+  hide_if_away: false
+  icon:
+  mac:
+  name: "LXJ\u7684 iPhone"
+  picture:
+  track: true
+  vendor:

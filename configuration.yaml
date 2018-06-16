@@ -1,0 +1,195 @@
+homeassistant:
+  # Name of the location where Home Assistant is running
+  name: MatthewLXJ-Home
+  # Location required to calculate the time the sun rises and sets
+  latitude: 30.518263996658227
+  longitude: 114.42714631281541
+  # Impacts weather/sunrise data (altitude above sea level in meters)
+  elevation: 46
+  # metric for Metric, imperial for Imperial
+  unit_system: metric
+  # Pick yours from here: http://en.wikipedia.org/wiki/List_of_tz_database_time_zones
+  time_zone: Asia/Shanghai
+  # Customization file
+  customize: !include customize.yaml
+
+input_text:
+  text1:
+    name: message
+    pattern: '[a-fA-F0-9]*'
+
+script:
+  reload_themes:
+    alias: 载入主题
+    sequence:
+      - service: frontend.reload_themes
+  themes_select:
+    alias: 确定主题
+    sequence:
+      - service: frontend.set_theme
+        data_template:
+          name: >
+            {% if is_state("input_select.select_themes", "红色") %} red
+            {% elif is_state("input_select.select_themes", "粉色") %} pink
+            {% elif is_state("input_select.select_themes", "紫色") %} purple
+            {% elif is_state("input_select.select_themes", "深紫色") %} deep-purple
+            {% elif is_state("input_select.select_themes", "靛青色") %} indigo     
+            {% elif is_state("input_select.select_themes", "蓝色") %} blue       
+            {% elif is_state("input_select.select_themes", "浅蓝色") %} light-blue 
+            {% elif is_state("input_select.select_themes", "青色") %} cyan       
+            {% elif is_state("input_select.select_themes", "水鸭色") %} teal       
+            {% elif is_state("input_select.select_themes", "绿色") %} green      
+            {% elif is_state("input_select.select_themes", "浅绿色") %} light-green
+            {% elif is_state("input_select.select_themes", "青柠色") %} lime       
+            {% elif is_state("input_select.select_themes", "黄色") %} yellow     
+            {% elif is_state("input_select.select_themes", "琥珀色") %} amber      
+            {% elif is_state("input_select.select_themes", "橙色") %} orange     
+            {% elif is_state("input_select.select_themes", "深橙色") %} deep-orange
+            {% elif is_state("input_select.select_themes", "棕色") %} brown      
+            {% elif is_state("input_select.select_themes", "灰色") %} grey       
+            {% elif is_state("input_select.select_themes", "蓝灰色") %} blue-grey
+            {% elif is_state("input_select.select_themes", "深红配色") %} theme_darkred
+            {% elif is_state("input_select.select_themes", "午夜配色") %} theme_midnight
+            {% elif is_state("input_select.select_themes", "我的配色") %} theme_my
+            {% endif %}
+  reboot_pi:
+    alias: 重启树莓派
+    sequence:
+      - service: shell_command.pi
+  turnon_auto:
+    alias: 激活全部自动化
+    sequence:
+      - service: automation.turn_on
+  reboot_ha:
+    alias: 重启HomeAssistant
+    sequence:
+      - service: homeassistant.restart
+  message_board:
+    alias: message_board
+    sequence:
+      - service: media_player.volume_set
+        data_template:
+          entity_id: media_player.google_home
+          volume_level: 0.6
+      - service: tts.baidu_say
+        entity_id: media_player.google_home
+        data_template: 
+          message: '{{states.input_text.text1.state}}'
+          cache: false
+      - delay: 00:00:30
+      - service: media_player.turn_off
+        entity_id: media_player.google_home
+  play_163music:
+    sequence:
+      - service: shell_command.getmusicurl
+        data_template:
+          musicname: '{{states.input_text.text1.state}}'
+      - delay: 00:00:01
+      - service: python_script.set_music_url
+      - delay: 00:00:01
+      - service: tts.baidu_say
+        entity_id: media_player.google_home
+        data_template: 
+          message: '马上为您播放：{{states.input_text.text1.state}}'
+      - delay: 00:00:04
+      - service: media_player.play_media
+        data_template:
+          entity_id: media_player.google_home
+          media_content_id: '{{states.sensor.musicurl.state}}'
+          media_content_type: 'audio/mp3'
+  stop_mediaplayer:
+    sequence:
+      service: media_player.turn_off
+      entity_id: media_player.google_home
+
+shell_command:
+  pi: ssh pi@192.168.0.103 sudo reboot
+  turn_off_pc: 'curl -X GET http://192.168.1.101:8000/?action=System.Shutdown'
+  getmusicurl: "python3 /home/homeassistant/.homeassistant/python_scripts/get_music_url.py {{states.input_text.text1.state}}"
+
+android_ip_webcam:
+  host: 192.168.0.104
+  sensors :
+    - battery_level
+    - battery_temp
+    - battery_voltage
+    - light
+    - motion
+    - audio_connections
+  switches:
+    - exposure_lock
+    - ffc
+    - focus
+    - gps_active
+    - night_vision
+    - overlay
+    - torch
+    - whitebalance_lock
+    - video_recording
+# Enables configuration UI
+config:
+
+updater:
+  # Optional, allows Home Assistant developers to focus on popular components.
+  # include_used_components: true
+  
+# Discover some devices automatically
+discovery:
+
+# Allows you to issue voice commands from the frontend in enabled browsers
+conversation:
+
+# Enables support for tracking state changes over time
+history:
+
+# View all events in a logbook
+logbook:
+
+# Enables a map showing the location of tracked devices
+map:
+
+# Track the sun
+sun:
+
+ios:
+
+
+  
+# Weather prediction
+# downloads: ！include_dir_named downloads
+  customize: !include customize.yaml   # Customization file
+  packages: !include_dir_named packages
+# http: !include http.yaml
+group: !include groups.yaml
+automation: !include automations.yaml
+sensor: !include sensor.yaml
+device_tracker: !include device_tracker.yaml
+zone: !include zone.yaml
+mqtt: !include mqtt.yaml
+binary_sensor: !include binary_sensor.yaml
+frontend: !include frontend.yaml   # Enables the frontend
+input_select: !include input_select.yaml
+binarybattery: !include binarybattery.yaml
+#switch: !include switch.yaml
+
+panel_iframe:
+  dockerui:
+    title: '容器管理'
+    url: 'http://192.168.0.100:9000'
+    icon: mdi:console
+  habridge:
+    title: '叮咚设置'
+    url: 'http://192.168.0.100'
+    icon: mdi:music
+  dockerhub:
+    title: '系统控制'
+    url: 'http://192.168.0.100:443/'
+    icon: mdi:wrench
+  configurator:
+    title: '配置管理'
+    url: 'http://192.168.0.100:3218/'
+    icon: mdi:wrench
+  manager:
+    title: '路由管理'
+    url: 'http://192.168.0.1'
+    icon: mdi:wrench

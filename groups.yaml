@@ -1,0 +1,331 @@
+default_view:
+ view: yes
+ entities:
+   #- group.time
+   - group.climate3
+   - group.climate4
+   - group.temp
+   - group.esp1
+   - group.climate5
+
+sensor_node_1_card:
+  name: Sensor Node 1  
+  view: no
+  entities:  
+    - sensor.sn1_temperature  
+    - sensor.sn1_humidity  
+    - sensor.sn1_ldr  
+    - sensor.sn1_pir 
+    - light.sn1_led
+
+temp:
+  view: no
+  name: 温度
+  entities:
+    - sensor.temperature
+
+air:
+  name: 寝室空调  
+  view: no          
+  entities:
+    - binary_sensor.air
+    - group.all_fans
+    
+battery:
+    name: 传感器电量  
+    icon: mdi:battery
+    entities:
+      - binary_sensor.menci_battery
+
+system:
+ name: 系统状态
+ view: yes
+ entities:
+   - group.rpi
+   - group.netspeed
+   - group.time
+   - group.all_fans
+   - fan.fengshan2
+
+rpi:
+ name: 树莓派状态
+ entities:
+   - sensor.last_boot
+   - sensor.since_last_boot_templated
+   #- sensor.since_last_boot
+   - sensor.cpu_use
+   - sensor.ram_use
+   - sensor.cpu_temperature
+   - sensor.disk_use_
+   - sensor.disk_free_
+   - sensor.sent_wlan0
+   - sensor.received_wlan0
+   - sensor.ipv4_address_wlan0
+
+netspeed:
+ name: 网络状态
+ view: no
+ entities:
+   - sensor.speedtest_ping
+   - sensor.speedtest_download
+   - sensor.speedtest_upload
+
+manager:
+ name: 系统管理
+ view: yes
+ entities:
+   - group.ha_manager1
+   - group.ha_manager2
+   - group.time
+
+ha_manager1:
+    name: "Music"
+    view: no
+    control: hidden
+    entities:
+      - input_text.text1
+      - script.stop_mediaplayer
+      - script.play_163music
+      - script.message_board
+      - script.reload_themes
+      - input_select.select_themes
+      - script.themes_select
+
+ha_manager2:
+    name: "RPIHASS"
+    view: no
+    control: hidden
+    entities:
+      - script.reboot_pi
+      - script.reboot_ha
+      - script.turnon_auto
+
+daily_weather_report:
+  view: no
+  entities:
+    - automation.daily_weather_report 
+
+camera:
+ name: 寝室实景
+ view: yes
+ entities:
+   - group.ipcamera
+   - group.cameraoperation
+   - group.all_switches
+
+qinshimen:
+  name: 寝室状态
+  view: yes
+  entities:
+    - group.battery
+    - group.esp1
+
+esp1:
+  name: 寝室温湿度
+  view: no
+  entities:
+    - sensor.qinshi_hum
+    - sensor.qinshi_temp
+
+ipcamera:
+ name: 摄像头实景
+ view: no
+ entities:
+   - camera.ip_webcam
+
+cameraoperation:
+ name: 摄像头状态
+ view: no
+ entities:
+   - sensor.ip_webcam_audio_connections
+   - sensor.ip_webcam_battery_level
+   - sensor.ip_webcam_light_level
+   - sensor.ip_webcam_battery_temperature
+   - sensor.ip_webcam_battery_voltage
+   - sensor.ip_webcam_motion
+
+all_switches:
+ name: 摄像头控制
+ view: no
+ entities:
+   - switch.ip_webcam_exposure_lock
+   - switch.ip_webcam_focus
+   - switch.ip_webcam_frontfacing_camera
+   - switch.ip_webcam_gps_active
+   - switch.ip_webcam_night_vision
+   - switch.ip_webcam_overlay
+   - switch.ip_webcam_torch
+   - switch.ip_webcam_video_recording
+   - switch.ip_webcam_white_balance_lock
+
+wether0:
+  name: 自动化设置
+  view: yes
+  entities:
+    - group.daily_weather_report
+
+binary:
+ name: 寝室设备管理
+ view: yes
+ entities:
+   - group.LXJ
+   - group.kouwaivan
+   - group.iPhone
+   - group.jiachao
+
+LXJ:
+ name: 罗徐佳的设备
+ view: no
+ entities:
+   - binary_sensor.matthewlxj
+   - switch.wake_on_lan
+   - binary_sensor.oneplus5
+
+iPhone:
+ name: 罗徐佳的iPhone-6s
+ view: no
+ entities:
+   - sensor.lxj_iphone_battery_level
+   - sensor.lxj_iphone_battery_state
+   - binary_sensor.lxjiphone
+
+kouwaivan:
+ name: 罗仲尧的设备
+ view: no
+ entities:
+   - binary_sensor.kouwaivan_s_desktop
+   - binary_sensor.huawei_mate_9
+
+jiachao:
+ name: 周嘉超的iPhone
+ view: no
+ entities:
+   - binary_sensor.jiachao
+time:
+  name: 日期和时间
+  view: no
+  entities:
+    - sensor.date
+    - sensor.time
+
+weather1:
+ name: 当日天气预报
+ view: yes
+ entities:
+   - group.climate5
+   - group.climate1
+   - group.climate2
+   - group.climate6
+
+climate1:
+ name: 空气质量指数
+ view: no
+ entities:
+   - sensor.aqi_o3
+   - sensor.aqi_pm10
+   - sensor.aqi_pm25
+   - sensor.api
+   - sensor.aqi_co
+   - sensor.aqi_no2
+   - sensor.aqi_qlty
+   - sensor.aqi_so2
+
+climate5:
+ name: 隔日天气预测
+ view: no
+ entities:
+   - sensor.tomorrowday_weather_day
+   - sensor.tomorrowday_weather_night
+
+climate2:
+ name: 即时预报
+ view: no
+ entities:
+   - sensor.now_weather
+   - sensor.now_tmp
+   - sensor.now_dir
+   - sensor.now_pres
+   - sensor.now_spd
+   - sensor.now_pcpn
+   - sensor.now_vis
+   - sensor.now_sc
+   - sensor.now_hum
+   - sensor.now_fl
+   - sensor.now_deg
+
+climate3:
+ name: 当天预报
+ view: no
+ entities:
+   - sensor.today_weather_day
+   - sensor.today_weather_night
+   - sensor.today_maxtmp
+   - sensor.today_mintmp
+   - sensor.today_sr
+   - sensor.today_ss
+   - sensor.today_mr
+   - sensor.today_ms
+
+climate4:
+ name: 生活指数
+ view: no
+ entities:
+   - sensor.air_suggestion_brf
+   - sensor.cw_suggestion_brf
+   - sensor.drsg_suggestion_brf
+   - sensor.flu_suggestion_brf
+   - sensor.sport_suggestion_brf
+   - sensor.trav_suggestion_brf
+   - sensor.comf_suggestion_brf
+   - sensor.uv_suggestion_brf
+   - group.air_suggestion_brf
+   - group.cw_suggestion_brf
+   - group.drsg_suggestion_brf
+   - group.flu_suggestion_brf
+   - group.sport_suggestion_brf
+   - group.trav_suggestion_brf
+   - group.comf_suggestion_brf
+   - group.uv_suggestion_brf
+
+climate6:
+ name: 天气情况
+ view: no
+ entities:  
+   - sensor.today_dir
+   - sensor.today_deg
+   - sensor.today_spd
+   - sensor.today_pres
+   - sensor.today_vis
+   - sensor.today_hum
+   - sensor.today_pop
+   - sensor.today_sc
+   - sensor.today_uv
+
+weather2:
+ name: 详细生活指数
+ view: yes
+ entities:
+   - group.suggestion1
+   - group.suggestion2
+
+suggestion1:
+ name: 生活建议
+ view: no
+ entities:
+   - sensor.drsg_suggestion_txt  #穿衣
+   - sensor.flu_suggestion_txt   #感冒
+   - sensor.air_suggestion_txt   #空气
+   - sensor.comf_suggestion_txt  #舒适度
+   
+suggestion2:
+ name: 户外建议
+ view: no
+ entities:
+   - sensor.sport_suggestion_txt #运动
+   - sensor.trav_suggestion_txt  #旅游
+   - sensor.cw_suggestion_txt    #洗车
+   - sensor.uv_suggestion_txt    #紫外线
+
+
+
+

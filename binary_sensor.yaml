@@ -1,0 +1,43 @@
+- platform: ping
+  name: MatthewLXJ
+  host: 192.168.1.195
+  scan_interval: 10
+  count: 5
+  
+# - platform: mqtt
+#   name: "menci"
+#   state_topic: "/esp1/switch/switch"
+#   qos: 0
+#   payload_on: "1"
+#   payload_off: "0"
+#   device_class: opening
+
+- platform: ping
+  name: OnePlus5
+  host: 192.168.1.111
+  scan_interval: 10
+  count: 3
+
+- platform: ping
+  name: kouwaivan_s_desktop
+  host: 192.168.1.122
+  scan_interval: 10
+  count: 3
+
+- platform: ping
+  name: LXJ-iPhone
+  host: 192.168.1.226
+  scan_interval: 10
+  count: 3
+
+- platform: ping
+  name: jiachao
+  host: 192.168.1.227
+  scan_interval: 10
+  count: 3
+
+- platform: ping
+  name: HUAWEI_Mate_9
+  host: 192.168.1.127
+  scan_interval: 10
+  count: 3

@@ -1,0 +1,168 @@
+SVG shapes */
+
+svg, svg * {
+ vector-effect: non-scaling-stroke !important;
+ pointer-events: all !important;
+}
+/*
+/* Hover over */
+
+/* Interior Garage */
+#binary_sensor\.mcu1_gpio12.window-opened {
+ transform: rotate(270deg);
+ transform-origin: left;
+}
+/* Back Door */
+#binary_sensor\.mcu2_gpio5.window-opened {
+ transform: rotate(270deg);
+ transform-origin: right;
+}
+#binary_sensor\.kitchen_door_opened.window-opened {
+ transform: rotate(270deg);
+ transform-origin: right;
+}
+
+#sensor\.dark_sky_minutely_summary  {
+ fill: #231F26 !important;
+ fill-opacity: 1.0;
+}
+
+.switch-on {
+  transition: 0.5s ease;
+  opacity: 0.05;
+}
+.switch-on:hover {
+  fill: #7EC0EE !important;
+  opacity: 0.01;
+  transition: 0.5s ease;
+}
+.switch-on:active {
+  opacity: 0.25;
+  fill: #1C86EE !important;
+  transition: 0.3s ease;
+}
+
+.switch-off {
+  opacity: 0.05;
+  transition: 0.5s ease;
+}
+.switch-off:hover {
+  fill: #CD6839 !important;
+  opacity: 0.01;
+  transition: 0.8s ease;
+}
+.switch-off:active {
+  opacity: 0.25;
+  fill: #CD3700 !important;
+  transition: 0.3s ease;
+}
+/* 以上是开关按钮的显示效果，点击的时候变色。 */
+
+.switch_zhuangtai-off {
+  fill: #686063 !important;
+  transition: 0.8s ease;
+}
+.switch_zhuangtai-on {
+  fill: #EA173A !important;
+  transition: 0.8s ease;
+}
+/* 以上是开关状态的显示，打开为红色，关闭为灰色 */
+
+.moshi-on {
+  opacity: 0.003;
+  transform: translate(0px,0px);
+  transition: 0.8s ease;
+}
+.moshi-on:hover {
+  fill: #FF69B4 !important;
+  opacity: 0.01;
+  transition: 0.6s ease;
+}
+.moshi-on:active {
+  fill: #FF0000 !important;
+    opacity: 0.25;
+  transition: 0.3s ease;
+}
+.moshi-off {
+  opacity: 0.03;
+  transform: translate(-41.5px,0px);
+  transition: 0.8s ease;
+}
+.moshi-off:hover {
+  fill: #00CED1 !important;
+  opacity: 0.01;
+  transition: 0.9s ease;
+}
+.moshi-off:active {
+  fill: #1C86EE !important;
+  opacity: 0.25;
+  transition: 0.3s ease;
+}
+
+.moshi1-on {
+  transform: translate(-20.8px,0px);
+  transition: 0.8s ease;
+}
+.moshi1-off {
+  transform: translate(0px,0px);
+  transition: 0.8s ease;
+}
+.moshi2-on {
+  transform: translate(-20.8px,0px);
+  transition: 0.8s ease;
+}
+.moshi2-off {
+  transform: translate(0px,0px);
+  transition: 0.8s ease;
+}
+/* 以上是模式按钮的左右移动的效果 */
+
+.script-on {
+  opacity: 0.95;
+}
+.script-on:hover {
+  fill: #808080  !important;
+  transition: 0.3s ease;
+}
+.script-on:active {
+  fill: #EA173A !important;
+  transition: 0.3s ease;
+}
+
+.script-off {
+  opacity: 0.95;
+}
+.script-off:hover {
+  fill: #808080 !important;
+  transition: 0.3s ease;
+}
+.script-off:active {
+  fill: #EA173A !important;
+  transition: 0.3s ease;
+}
+/* 以上是加减温度按钮的点击效果 */
+
+.moshi-zhileng {
+  opacity: 1;
+  transition: 1.0s ease;
+}
+.moshi-jiare {
+  opacity: 0.001;
+  transition: 1.0s ease;
+}
+/* 以上是雪花和太阳图标的切换效果 */
+
+.moshi_color-zhileng {
+  stroke: #1C86EE !important;
+  transition: 0.8s ease;
+}
+.moshi_color-jiare {
+  stroke: #EE2C2C !important;
+  transition: 0.8s ease;
+}
+/* 以上是中间环形颜色变换效果 */
+
+.temp16 {
+  opacity: 0.0001;
+  transition: 2.3s ease;
+}

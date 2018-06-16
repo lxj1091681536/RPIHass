@@ -1,0 +1,66 @@
+# - platform: mqtt
+#   name: "switch_1"
+#   state_topic: "/esp1/jdq/switch"
+#   command_topic: "/ESP_Easy/gpio/2"
+#   qos: 1
+#   payload_on: "1"
+#   payload_off: "0"
+#   retain: true
+  
+# - platform: mqtt
+#   name: "t1"
+#   state_topic: "home/8ch/2/stat"
+#   command_topic: "home/8ch/2"
+#   qos: 1
+#   payload_on: "1on"
+#   payload_off: "1off"
+#   retain: true 
+# - platform: mqtt
+#   name: "t2"
+#   state_topic: "home/8ch/2/stat"
+#   command_topic: "home/8ch/2"
+#   qos: 1
+#   payload_on: "2on"
+#   payload_off: "2off"
+#   retain: true
+# - platform: mqtt
+#   name: "t3"
+#   state_topic: "home/8ch/2/stat"
+#   command_topic: "home/8ch/2"
+#   qos: 1
+#   payload_on: "3on"
+#   payload_off: "3off"
+#   retain: true 
+# - platform: mqtt
+#   name: "t4"
+#   state_topic: "home/8ch/2/stat"
+#   command_topic: "home/8ch/2"
+#   qos: 1
+#   payload_on: "4on"
+#   payload_off: "4off"
+#   retain: true 
+# - platform: mqtt
+#   name: "t5"
+#   state_topic: "home/8ch/2/stat"
+#   command_topic: "home/8ch/2"
+#   qos: 1
+#   payload_on: "5on"
+#   payload_off: "5off"
+#   retain: true   
+# - platform: mqtt
+#   name: "t6"
+#   state_topic: "home/8ch/2/stat"
+#   command_topic: "home/8ch/2"
+#   qos: 1
+#   payload_on: "6on"
+#   payload_off: "6off"
+#   retain: true   
+# - platform: mqtt
+#   name: "t7"
+#   state_topic: "home/8ch/2/stat"
+#   command_topic: "home/8ch/2"
+#   qos: 1
+#   payload_on: "7on"
+#   payload_off: "7off"
+#   retain: true   
+  

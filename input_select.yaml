@@ -1,0 +1,28 @@
+select_themes:
+    name: '选择主题:'
+    options:
+      - Select Themes
+      - 红色
+      - 粉色
+      - 紫色
+      - 深紫色
+      - 靛青色
+      - 蓝色
+      - 浅蓝色
+      - 青色
+      - 水鸭色
+      - 绿色
+      - 浅绿色
+      - 青柠色
+      - 黄色
+      - 琥珀色
+      - 橙色
+      - 深橙色
+      - 棕色
+      - 灰色
+      - 蓝灰色
+      - 我的配色
+      - 深红配色
+      - 午夜配色
+    initial: 'Select Themes'
+    icon: mdi:auto-fix

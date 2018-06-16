@@ -1,0 +1,370 @@
+  
+  - platform: time_date
+    display_options:
+      - 'time'
+      - 'date'
+  #下面这些都是我自己的mqtt设置，你可以根据需要来参考
+  # - platform: mqtt  
+  #   state_topic: "bruh/sensornode1"  
+  #   name: "SN1 Humidity"  
+  #   unit_of_measurement: "%"  
+  #   value_template: '{{ value_json.humidity | round(1) }}'  
+  
+  # - platform: mqtt  
+  #   state_topic: "bruh/sensornode1"  
+  #   name: "SN1 LDR"
+  #   ##This sensor is not calibrated to actual LUX. Rather, this a map of the input voltage ranging from 0 - 1023.
+  #   unit_of_measurement: "LUX"  
+  #   value_template: '{{ value_json.ldr }}'  
+  
+  # - platform: mqtt  
+  #   state_topic: "bruh/sensornode1"  
+  #   name: "SN1 PIR"  
+  #   value_template: '{{ value_json.motion }}'  
+  
+  # - platform: mqtt  
+  #   state_topic: "bruh/sensornode1"  
+  #   name: "SN1 Temperature"  
+  #   unit_of_measurement: "°F"  
+  #   value_template: '{{ value_json.temperature | round(1) }}'  
+
+  # - platform: mqtt
+  #   state_topic: "bruh/sensornode1"
+  #   name: "SN1 Real Feel"
+  #   unit_of_measurement: "°F"
+  #   value_template: '{{ value_json.heatIndex | round(1) }}'
+
+  - platform: mqtt
+    name: "qinshi_temp"
+    state_topic: "/esp1/sensor/temp"
+    qos: 0
+    unit_of_measurement: "°C"
+
+  - platform: mqtt
+    name: "qinshi_hum"
+    state_topic: "/esp1/sensor/hum"
+    qos: 0
+    unit_of_measurement: "%"    
+
+  - platform: mqtt
+    name: "Temp"
+    state_topic: "ESP1/DHT/temp"
+    qos: 1
+    unit_of_measurement: "℃"
+    value_template: "{{ value_json.Temp }}"    
+
+  - platform: HeWeather
+    api_key: 019d3cdc36204948adf6dafcd67569e2
+    interval: 300
+    isShowWeatherPic: True
+    monitored_conditions:
+      #空气质量
+      aqi:
+      #空气质量
+        - aqi
+      #一氧化碳
+        - co
+      #二氧化氮
+        - no2
+      #臭氧
+        - o3
+      #PM10
+        - pm10
+      #PM2.5
+        - pm25
+      #空气质量
+        - qlty
+      #二氧化硫
+        - so2
+      #当天预报
+      ToDay_forecast:
+        # 日出时间
+        - sr
+        # 日落时间
+        - ss
+        # 月升时间
+        - mr
+        # 月落时间
+        - ms
+        # 白天天气情况
+        - Weather_d
+        # 夜间天气情况
+        - Weather_n
+        # 相对湿度
+        - hum
+        # 降水概率
+        - pop
+        # 气压
+        - pres
+        # 最高温度
+        - maxTmp
+        # 最低温度
+        - minTmp
+        # 紫外线指数
+        - uv
+        # 能见度
+        - vis
+        # 风向（360度）
+        - deg
+        # 风向
+        - dir
+        # 风力等级
+        - sc
+        # 风速
+        - spd
+      #明天预报
+      Tomorrow_forecast:
+      #白天天气情况
+        - Weather_d
+        - Weather_n
+      #后天天气情况
+      OfterTomorrow_forecast:
+      #白天天气情况
+        - Weather_d
+      #1小时预报
+      1Hour_forecast:
+      #天气情况
+        # 天气情况
+        - Weather
+        # 相对湿度
+        - hum
+        # 降水概率
+        - pop
+        # 气压
+        - pres
+        # 温度
+        - tmp
+        # 风向（360度）
+        - deg
+        # 风向
+        - dir
+        # 风力等级
+        - sc
+        # 风速
+        - spd
+      #3小时预报
+      3Hour_forecast:
+      #6小时预报
+      6Hour_forecast:
+      #9小时预报
+      9Hour_forecast:
+      #12小时预报
+      12Hour_forecast:
+      #15小时预报
+      15Hour_forecast:
+      #18小时预报
+      18Hour_forecast:
+      #21小时预报
+      21Hour_forecast:
+      #即时预报
+      now:
+        # 天气情况
+        - Weather
+        # 体感温度
+        - fl
+        # 相对湿度
+        - hum
+        # 降水量
+        - pcpn
+        # 气压
+        - pres
+        # 温度
+        - tmp
+        # 能见度
+        - vis
+        # 风向（360度）
+        - deg
+        # 风向
+        - dir
+        # 风力等级
+        - sc
+        # 风速
+        - spd
+      # 生活指数
+      suggestion:
+        # 空气指数
+        air:
+          # 简介
+          - brf
+          # 数据详情
+          - txt
+        # 舒适度指数
+        comf:
+          # 简介
+          - brf
+          # 数据详情
+          - txt
+        # 洗车指数
+        cw:
+          # 简介
+          - brf
+          # 数据详情
+          - txt
+        # 穿衣指数
+        drsg:
+          # 简介
+          - brf
+          # 数据详情
+          - txt
+        # 感冒指数
+        flu:
+          # 简介
+          - brf
+          # 数据详情
+          - txt
+        # 运动指数
+        sport:
+          # 简介
+          - brf
+          # 数据详情
+          - txt
+        # 旅游指数
+        trav:
+          # 简介
+          - brf
+          # 数据详情
+          - txt
+        # 紫外线指数
+        uv:
+          # 简介
+          - brf
+          # 数据详情
+          - txt
+
+  - platform: speedtest
+    minute: 55
+    hour:
+      - 0
+      - 1
+      - 2
+      - 3
+      - 4
+      - 5
+      - 6
+      - 7
+      - 8
+      - 9
+      - 10
+      - 11
+      - 12
+      - 13
+      - 14
+      - 15
+      - 16
+      - 17
+      - 18
+      - 19
+      - 20
+      - 21
+      - 22
+      - 23
+    monitored_conditions:
+     - ping
+     - download
+     - upload
+
+  - platform: systemmonitor
+    resources:
+    - type: memory_use_percent
+    - type: processor_use
+    - type: disk_use
+      arg: /
+    - type: disk_free
+      arg: /
+    - type: network_in
+      arg: wlan0
+    - type: network_out
+      arg: wlan0
+    - type: ipv4_address
+      arg: wlan0
+    - type: last_boot
+      #arg: octave-cli
+    - type: since_last_boot
+    #  arg: octave-cli
+  - platform: command_line
+    name: CPU Temperature
+    command: "cat /sys/class/thermal/thermal_zone0/temp"
+    # If errors occur, remove degree symbol below
+    unit_of_measurement: "°C"
+    value_template: '{{ value | multiply(0.001) }}'
+    scan_interval: 30
+  - platform: template
+    sensors:
+      since_last_boot_templated:
+        value_template: >-
+          {% if states.sensor.since_last_boot.state.count("day") > 0 %}
+          {{states.sensor.since_last_boot.state.split(",") [0] +
+          "," +
+          states.sensor.since_last_boot.state.split(",") [1].split(":") [0] +
+          " hours, " +
+          states.sensor.since_last_boot.state.split(",") [1].split(":") [1] +
+          " minutes" }}
+          {% else %}
+          {{ "0 days, " +
+          states.sensor.since_last_boot.state.split(",") [0].split(":") [0] +
+          " hours, " +
+          states.sensor.since_last_boot.state.split(",") [0].split(":") [1] +
+          " minutes" }}
+          {% endif %}
+
+  # - platform: CaiyunweatherSE
+  #   name: caiyun
+  #   api_key: pvcy0D0RG98rFswb
+  #   monitored_conditions:
+  #     realtime:
+  #       - temperature
+  #       - skycon
+  #       - cloudrate
+  #       - aqi
+  #       - humidity
+  #       - pm25
+  #     precipitation:
+  #       - nearest_precipitation_distance
+  #       - nearest_precipitation_intensity
+  #       - local_precipitation_intensity
+  #       - local_datasource
+  #       - wind_direction
+  #       - wind_speed
+  #     hourly:
+  #       - skycon
+  #       - cloudrate
+  #       - aqi
+  #       - humidity
+  #       - pm25
+  #       - precipitation
+  #       - wind
+  #       - temperature
+  #     minutely:
+  #       - description
+  #       - probability_0
+  #       - probability_1
+  #       - probability_2
+  #       - probability_3
+ 
+  #     daily:
+  #       - coldRisk
+  #       - temperature_max
+  #       - temperature_avg
+  #       - temperature_min
+  #       - skycon
+  #       - cloudrate_max
+  #       - cloudrate_avg
+  #       - cloudrate_min
+  #       - aqi_max
+  #       - aqi_avg
+  #       - aqi_min
+  #       - humidity_max
+  #       - humidity_avg
+  #       - humidity_min
+  #       - sunset
+  #       - sunrise
+  #       - ultraviolet
+  #       - pm25_max
+  #       - pm25_avg
+  #       - pm25_min
+  #       - dressing
+  #       - carWashing
+  #       - precipitation_max
+  #       - precipitation_avg
+  #       - precipitation_min         
+
