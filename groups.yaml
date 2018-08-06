@@ -174,7 +174,7 @@ binary:
    - group.jiachao
 
 LXJ:
- name: 罗徐佳的设备
+ name: lxj的设备
  view: no
  entities:
    - binary_sensor.matthewlxj
@@ -182,7 +182,7 @@ LXJ:
    - binary_sensor.oneplus5
 
 iPhone:
- name: 罗徐佳的iPhone-6s
+ name: lxj的iPhone-6s
  view: no
  entities:
    - sensor.lxj_iphone_battery_level
@@ -190,14 +190,14 @@ iPhone:
    - binary_sensor.lxjiphone
 
 kouwaivan:
- name: 罗仲尧的设备
+ name: lzy的设备
  view: no
  entities:
    - binary_sensor.kouwaivan_s_desktop
    - binary_sensor.huawei_mate_9
 
 jiachao:
- name: 周嘉超的iPhone
+ name: zjc的iPhone
  view: no
  entities:
    - binary_sensor.jiachao
